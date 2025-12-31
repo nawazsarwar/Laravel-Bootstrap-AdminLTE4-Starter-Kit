@@ -25,7 +25,7 @@ Route::get('email/verify', [App\Http\Controllers\Auth\VerificationController::cl
 Route::get('email/verify/{id}/{hash}', [App\Http\Controllers\Auth\VerificationController::class, 'verify'])->name('verification.verify');
 Route::post('email/resend', [App\Http\Controllers\Auth\VerificationController::class, 'resend'])->name('verification.resend');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', '2fa', 'admin']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => '', 'middleware' => ['auth', '2fa', 'admin']], function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
     // Permissions
     Route::delete('permissions/destroy', [App\Http\Controllers\Admin\PermissionsController::class, 'massDestroy'])->name('permissions.massDestroy');
@@ -58,7 +58,7 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
     }
 });
 
-Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['auth', '2fa']], function () {
+Route::group(['as' => 'frontend.', 'namespace' => '', 'middleware' => ['auth', '2fa']], function () {
     Route::get('/home', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
     // Permissions
