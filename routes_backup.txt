@@ -1,0 +1,94 @@
+
+  GET|HEAD        / ................................................................................................................... 
+  POST            _ignition/execute-solution ............ ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
+  GET|HEAD        _ignition/health-check ........................ ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
+  POST            _ignition/update-config ..................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+  GET|HEAD        admin ....................................................................... admin.home › Admin\HomeController@index
+  GET|HEAD        admin/audit-logs ........................................... admin.audit-logs.index › Admin\AuditLogsController@index
+  GET|HEAD        admin/audit-logs/{audit_log} ................................. admin.audit-logs.show › Admin\AuditLogsController@show
+  GET|HEAD        admin/global-search ........................................ admin.globalSearch › Admin\GlobalSearchController@search
+  GET|HEAD        admin/permissions ....................................... admin.permissions.index › Admin\PermissionsController@index
+  POST            admin/permissions ....................................... admin.permissions.store › Admin\PermissionsController@store
+  GET|HEAD        admin/permissions/create .............................. admin.permissions.create › Admin\PermissionsController@create
+  DELETE          admin/permissions/destroy ................... admin.permissions.massDestroy › Admin\PermissionsController@massDestroy
+  GET|HEAD        admin/permissions/{permission} ............................ admin.permissions.show › Admin\PermissionsController@show
+  PUT|PATCH       admin/permissions/{permission} ........................ admin.permissions.update › Admin\PermissionsController@update
+  DELETE          admin/permissions/{permission} ...................... admin.permissions.destroy › Admin\PermissionsController@destroy
+  GET|HEAD        admin/permissions/{permission}/edit ....................... admin.permissions.edit › Admin\PermissionsController@edit
+  GET|HEAD        admin/roles ......................................................... admin.roles.index › Admin\RolesController@index
+  POST            admin/roles ......................................................... admin.roles.store › Admin\RolesController@store
+  GET|HEAD        admin/roles/create ................................................ admin.roles.create › Admin\RolesController@create
+  DELETE          admin/roles/destroy ..................................... admin.roles.massDestroy › Admin\RolesController@massDestroy
+  GET|HEAD        admin/roles/{role} .................................................... admin.roles.show › Admin\RolesController@show
+  PUT|PATCH       admin/roles/{role} ................................................ admin.roles.update › Admin\RolesController@update
+  DELETE          admin/roles/{role} .............................................. admin.roles.destroy › Admin\RolesController@destroy
+  GET|HEAD        admin/roles/{role}/edit ............................................... admin.roles.edit › Admin\RolesController@edit
+  GET|HEAD        admin/users ......................................................... admin.users.index › Admin\UsersController@index
+  POST            admin/users ......................................................... admin.users.store › Admin\UsersController@store
+  GET|HEAD        admin/users/create ................................................ admin.users.create › Admin\UsersController@create
+  DELETE          admin/users/destroy ..................................... admin.users.massDestroy › Admin\UsersController@massDestroy
+  POST            admin/users/parse-csv-import ...................... admin.users.parseCsvImport › Admin\UsersController@parseCsvImport
+  POST            admin/users/process-csv-import ................ admin.users.processCsvImport › Admin\UsersController@processCsvImport
+  GET|HEAD        admin/users/{user} .................................................... admin.users.show › Admin\UsersController@show
+  PUT|PATCH       admin/users/{user} ................................................ admin.users.update › Admin\UsersController@update
+  DELETE          admin/users/{user} .............................................. admin.users.destroy › Admin\UsersController@destroy
+  GET|HEAD        admin/users/{user}/edit ............................................... admin.users.edit › Admin\UsersController@edit
+  GET|HEAD        api/v1/users ................................................ api.users.index › Api\V1\Admin\UsersApiController@index
+  POST            api/v1/users ................................................ api.users.store › Api\V1\Admin\UsersApiController@store
+  GET|HEAD        api/v1/users/{user} ........................................... api.users.show › Api\V1\Admin\UsersApiController@show
+  PUT|PATCH       api/v1/users/{user} ....................................... api.users.update › Api\V1\Admin\UsersApiController@update
+  DELETE          api/v1/users/{user} ..................................... api.users.destroy › Api\V1\Admin\UsersApiController@destroy
+  GET|HEAD        frontend/profile .......................................... frontend.profile.index › Frontend\ProfileController@index
+  POST            frontend/profile ........................................ frontend.profile.update › Frontend\ProfileController@update
+  POST            frontend/profile/destroy .............................. frontend.profile.destroy › Frontend\ProfileController@destroy
+  POST            frontend/profile/password ........................... frontend.profile.password › Frontend\ProfileController@password
+  GET|HEAD        home .................................................................. frontend.home › Frontend\HomeController@index
+  GET|HEAD        login .................................................................... login › Auth\LoginController@showLoginForm
+  POST            login .................................................................................... Auth\LoginController@login
+  POST            logout ......................................................................... logout › Auth\LoginController@logout
+  GET|HEAD        password/confirm .................................. password.confirm › Auth\ConfirmPasswordController@showConfirmForm
+  POST            password/confirm ............................................................. Auth\ConfirmPasswordController@confirm
+  POST            password/email .................................... password.email › Auth\ForgotPasswordController@sendResetLinkEmail
+  GET|HEAD        password/reset ................................. password.request › Auth\ForgotPasswordController@showLinkRequestForm
+  POST            password/reset ................................................. password.update › Auth\ResetPasswordController@reset
+  GET|HEAD        password/reset/{token} .................................. password.reset › Auth\ResetPasswordController@showResetForm
+  GET|HEAD        permissions ....................................... frontend.permissions.index › Frontend\PermissionsController@index
+  POST            permissions ....................................... frontend.permissions.store › Frontend\PermissionsController@store
+  GET|HEAD        permissions/create .............................. frontend.permissions.create › Frontend\PermissionsController@create
+  DELETE          permissions/destroy ................... frontend.permissions.massDestroy › Frontend\PermissionsController@massDestroy
+  GET|HEAD        permissions/{permission} ............................ frontend.permissions.show › Frontend\PermissionsController@show
+  PUT|PATCH       permissions/{permission} ........................ frontend.permissions.update › Frontend\PermissionsController@update
+  DELETE          permissions/{permission} ...................... frontend.permissions.destroy › Frontend\PermissionsController@destroy
+  GET|HEAD        permissions/{permission}/edit ....................... frontend.permissions.edit › Frontend\PermissionsController@edit
+  GET|HEAD        profile/password ......................................... profile.password.edit › Auth\ChangePasswordController@edit
+  POST            profile/password ..................................... profile.password.update › Auth\ChangePasswordController@update
+  POST            profile/profile ........................ profile.password.updateProfile › Auth\ChangePasswordController@updateProfile
+  POST            profile/profile/destroy ..................... profile.password.destroyProfile › Auth\ChangePasswordController@destroy
+  POST            profile/profile/two-factor ......... profile.password.toggleTwoFactor › Auth\ChangePasswordController@toggleTwoFactor
+  POST            profile/toggle-two-factor ........... frontend.profile.toggle-two-factor › Frontend\ProfileController@toggleTwoFactor
+  GET|HEAD        register .................................................... register › Auth\RegisterController@showRegistrationForm
+  POST            register ........................................................................... Auth\RegisterController@register
+  GET|HEAD        roles ......................................................... frontend.roles.index › Frontend\RolesController@index
+  POST            roles ......................................................... frontend.roles.store › Frontend\RolesController@store
+  GET|HEAD        roles/create ................................................ frontend.roles.create › Frontend\RolesController@create
+  DELETE          roles/destroy ..................................... frontend.roles.massDestroy › Frontend\RolesController@massDestroy
+  GET|HEAD        roles/{role} .................................................... frontend.roles.show › Frontend\RolesController@show
+  PUT|PATCH       roles/{role} ................................................ frontend.roles.update › Frontend\RolesController@update
+  DELETE          roles/{role} .............................................. frontend.roles.destroy › Frontend\RolesController@destroy
+  GET|HEAD        roles/{role}/edit ............................................... frontend.roles.edit › Frontend\RolesController@edit
+  GET|HEAD        sanctum/csrf-cookie ............................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+  GET|HEAD        two-factor ........................................................... twoFactor.show › Auth\TwoFactorController@show
+  POST            two-factor ......................................................... twoFactor.check › Auth\TwoFactorController@check
+  GET|HEAD        two-factor/resend ................................................ twoFactor.resend › Auth\TwoFactorController@resend
+  GET|HEAD        userVerification/{token} ...................................... userVerification › UserVerificationController@approve
+  GET|HEAD        users ......................................................... frontend.users.index › Frontend\UsersController@index
+  POST            users ......................................................... frontend.users.store › Frontend\UsersController@store
+  GET|HEAD        users/create ................................................ frontend.users.create › Frontend\UsersController@create
+  DELETE          users/destroy ..................................... frontend.users.massDestroy › Frontend\UsersController@massDestroy
+  GET|HEAD        users/{user} .................................................... frontend.users.show › Frontend\UsersController@show
+  PUT|PATCH       users/{user} ................................................ frontend.users.update › Frontend\UsersController@update
+  DELETE          users/{user} .............................................. frontend.users.destroy › Frontend\UsersController@destroy
+  GET|HEAD        users/{user}/edit ............................................... frontend.users.edit › Frontend\UsersController@edit
+
+                                                                                                                    Showing [90] routes
+
