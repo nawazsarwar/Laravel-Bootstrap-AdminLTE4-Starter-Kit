@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Home Route
+    |--------------------------------------------------------------------------
+    |
+    | This value is the path to the "home" route for your application.
+    | This is used by Laravel authentication to redirect users after login.
+    |
+    */
+
+    'home' => env('APP_HOME', '/home'),
+
 ];

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\AuditLog;
 use Gate;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class AuditLogsController extends Controller
 {

@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\CsvImportTrait;
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\MassDestroyUserRequest;
-use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\User;
 use Gate;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class UsersController extends Controller
 {

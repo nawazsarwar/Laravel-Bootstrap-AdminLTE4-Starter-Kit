@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
+use Symfony\Component\HttpFoundation\Response;
 use App\Http\Resources\Admin\UserResource;
+use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\User;
 use Gate;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class UsersApiController extends Controller
 {
@@ -17,7 +17,7 @@ class UsersApiController extends Controller
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new UserResource(User::with(['roles'])->get());
+        return UserResource::collection(User::with(['roles'])->get());
     }
 
     public function store(StoreUserRequest $request)

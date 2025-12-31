@@ -103,3 +103,12 @@ div.dt-button-collection {
     background-color: rgba(128, 128, 128, 0.1);
     font-weight: bolder;
 }
+
+.brand-link {
+    text-align: center;
+}
+
+.brand-link .brand-text {
+    width: 100%;
+    text-align: center;
+}

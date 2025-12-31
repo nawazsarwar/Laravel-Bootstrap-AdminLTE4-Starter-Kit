@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CheckTwoFactorRequest;
 use App\Notifications\TwoFactorCodeNotification;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Http\Requests\CheckTwoFactorRequest;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 
 class TwoFactorController extends Controller
 {

@@ -2,18 +2,18 @@
 
 namespace App\Models;
 
-use App\Notifications\VerifyUserNotification;
-use App\Traits\Auditable;
-use Carbon\Carbon;
-use DateTimeInterface;
-use Hash;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Notifications\VerifyUserNotification;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use App\Traits\Auditable;
+use DateTimeInterface;
+use Carbon\Carbon;
+use Hash;
 
 class User extends Authenticatable
 {

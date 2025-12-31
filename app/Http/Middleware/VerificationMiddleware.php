@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Gate;
 use App\Models\Role;
 use Closure;
-use Illuminate\Support\Facades\Gate;
 
 class VerificationMiddleware
 {

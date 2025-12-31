@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="{{ route('admin.home') }}" class="brand-link text-center">
         <span class="brand-text font-weight-light">{{ trans('panel.site_title') }}</span>
     </a>
 
@@ -11,7 +11,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li>
+                <li class="mb-1">
                     <select class="searchable-field form-control">
 
                     </select>
