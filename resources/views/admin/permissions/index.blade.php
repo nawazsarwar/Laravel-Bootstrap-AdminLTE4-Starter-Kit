@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 @can('permission_create')
-    <div style="margin-bottom: 10px;" class="row">
+    <div class="row mb-2">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.permissions.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.permission.title_singular') }}
@@ -16,11 +16,10 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Permission">
+            <table class="table table-bordered table-striped table-hover datatable datatable-Permission">
                 <thead>
                     <tr>
                         <th width="10">
-
                         </th>
                         <th>
                             {{ trans('cruds.permission.fields.id') }}
@@ -37,7 +36,6 @@
                     @foreach($permissions as $key => $permission)
                         <tr data-entry-id="{{ $permission->id }}">
                             <td>
-
                             </td>
                             <td>
                                 {{ $permission->id ?? '' }}
@@ -47,13 +45,13 @@
                             </td>
                             <td>
                                 @can('permission_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.permissions.show', $permission->id) }}">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.permissions.show', $permission->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('permission_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.permissions.edit', $permission->id) }}">
+                                    <a class="btn btn-sm btn-info" href="{{ route('admin.permissions.edit', $permission->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
@@ -62,12 +60,10 @@
                                     <form action="{{ route('admin.permissions.destroy', $permission->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <input type="submit" class="btn btn-sm btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
-
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>
@@ -120,11 +116,11 @@
     pageLength: 100,
   });
   let table = $('.datatable-Permission:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-  $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+  $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function(e){
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

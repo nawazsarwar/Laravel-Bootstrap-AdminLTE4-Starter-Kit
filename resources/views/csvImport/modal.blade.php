@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">@lang('global.app_csvImport')</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class='row'>
@@ -19,29 +19,24 @@
                                     <input id="csv_file" type="file" class="form-control-file" name="csv_file" required>
 
                                     @if($errors->has('csv_file'))
-                                        <span class="help-block">
+                                        <small class="form-text text-muted">
                                             <strong>{{ $errors->first('csv_file') }}</strong>
-                                        </span>
+                                        </small>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="header" checked> @lang('global.app_file_contains_header_row')
-                                        </label>
-                                    </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="header" id="headerCheck" checked>
+                                    <label class="form-check-label" for="headerCheck">@lang('global.app_file_contains_header_row')</label>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        @lang('global.app_parse_csv')
-                                    </button>
-                                </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary">
+                                    @lang('global.app_parse_csv')
+                                </button>
                             </div>
                         </form>
                     </div>

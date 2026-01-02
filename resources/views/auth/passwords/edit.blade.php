@@ -50,7 +50,7 @@
                         <label class="required" for="password">New {{ trans('cruds.user.fields.password') }}</label>
                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" required>
                         @if($errors->has('password'))
-                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                            <div class="invalid-feedback d-block">{{ $errors->first('password') }}</div>
                         @endif
                     </div>
                     <div class="form-group">

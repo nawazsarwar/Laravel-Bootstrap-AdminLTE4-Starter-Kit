@@ -7,9 +7,9 @@
     </div>
 
     <div class="card-body">
-        <div class="form-group">
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.users.index') }}">
+        <div class="mb-3">
+            <div class="mb-3">
+                <a class="btn btn-secondary" href="{{ route('admin.users.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
@@ -69,14 +69,14 @@
                         </th>
                         <td>
                             @foreach($user->roles as $key => $roles)
-                                <span class="label label-info">{{ $roles->title }}</span>
+                                <span class="badge bg-info">{{ $roles->title }}</span>
                             @endforeach
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.users.index') }}">
+            <div class="mb-3">
+                <a class="btn btn-secondary" href="{{ route('admin.users.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>

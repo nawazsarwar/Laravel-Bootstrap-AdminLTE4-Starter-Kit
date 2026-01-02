@@ -8,16 +8,37 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ trans('panel.site_title') }}</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/adminltev3.css') }}" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="{{ asset('bootstrap5/css/bootstrap.min.css') }}" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet" />
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+
+    <!-- AdminLTE 4 CSS -->
+    <link href="{{ asset('adminlte4/css/adminlte.min.css') }}" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+
     @yield('styles')
 </head>
 
-<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
+<body class="login-page bg-body-secondary">
     @yield('content')
+
+    <!-- jQuery -->
+    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="{{ asset('bootstrap5/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- AdminLTE 4 JS -->
+    <script src="{{ asset('adminlte4/js/adminlte.min.js') }}"></script>
+
     @yield('scripts')
 </body>
 

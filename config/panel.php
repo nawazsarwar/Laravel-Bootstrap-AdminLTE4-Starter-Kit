@@ -17,4 +17,6 @@ return [
     ],
     'registration_default_role' => '2',
 
+    'sidebar_background_color' => '#063',
+
 ];

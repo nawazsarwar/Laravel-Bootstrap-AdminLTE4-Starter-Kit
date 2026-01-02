@@ -10,8 +10,8 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="form-group">
-                        <div class="form-group">
+                    <div class="mb-3">
+                        <div class="mb-3">
                             <a class="btn btn-default" href="{{ route('frontend.permissions.index') }}">
                                 {{ trans('global.back_to_list') }}
                             </a>
@@ -36,7 +36,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <a class="btn btn-default" href="{{ route('frontend.permissions.index') }}">
                                 {{ trans('global.back_to_list') }}
                             </a>

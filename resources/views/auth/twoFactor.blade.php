@@ -18,12 +18,10 @@
                         </p>
 
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                            </div>
                             <input name="two_factor_code" type="text" class="form-control{{ $errors->has('two_factor_code') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.two_factor.code') }}">
+                            <div class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </div>
                             @if($errors->has('two_factor_code'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('two_factor_code') }}
@@ -37,7 +35,7 @@
                                     {{ trans('global.two_factor.verify') }}
                                 </button>
                             </div>
-                            <div class="col-6 text-right">
+                            <div class="col-6 text-end">
                                 <a class="btn btn-secondary px-4" href="{{ route('twoFactor.resend') }}">{{ __('global.two_factor.resend') }}</a>
                                 <a class="btn btn-danger px-4" href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                                     {{ trans('global.logout') }}

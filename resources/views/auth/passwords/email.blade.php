@@ -2,11 +2,9 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-        <div class="login-logo">
-            <a href="{{ route('admin.home') }}">
-                {{ trans('panel.site_title') }}
-            </a>
-        </div>
+        <a href="{{ route('admin.home') }}">
+            {{ trans('panel.site_title') }}
+        </a>
     </div>
     <div class="card">
         <div class="card-body login-card-body">
@@ -23,22 +21,25 @@
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
 
-                <div>
-                    <div class="form-group">
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email') }}">
-
-                        @if($errors->has('email'))
-                            <span class="text-danger">
-                                {{ $errors->first('email') }}
-                            </span>
-                        @endif
+                <div class="input-group mb-3">
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" required autocomplete="email" autofocus placeholder="{{ trans('global.login_email') }}" value="{{ old('email') }}">
+                    <div class="input-group-text">
+                        <i class="fas fa-envelope"></i>
                     </div>
+                    @if($errors->has('email'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('email') }}
+                        </div>
+                    @endif
                 </div>
+
                 <div class="row">
-                    <div class="col-12 text-right">
-                        <button type="submit" class="btn btn-primary btn-flat btn-block">
-                            {{ trans('global.send_password') }}
-                        </button>
+                    <div class="col-12">
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                {{ trans('global.send_password') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>

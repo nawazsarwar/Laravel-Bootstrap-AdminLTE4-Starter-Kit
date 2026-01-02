@@ -7,9 +7,9 @@
     </div>
 
     <div class="card-body">
-        <div class="form-group">
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.audit-logs.index') }}">
+        <div class="mb-3">
+            <div class="mb-3">
+                <a class="btn btn-secondary" href="{{ route('admin.audit-logs.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
@@ -81,8 +81,8 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.audit-logs.index') }}">
+            <div class="mb-3">
+                <a class="btn btn-secondary" href="{{ route('admin.audit-logs.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>

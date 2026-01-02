@@ -13,17 +13,17 @@
                     <form method="POST" action="{{ route("frontend.permissions.store") }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label class="required" for="title">{{ trans('cruds.permission.fields.title') }}</label>
-                            <input class="form-control" type="text" name="title" id="title" value="{{ old('title', '') }}" required>
+                            <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', '') }}" required>
                             @if($errors->has('title'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('title') }}
                                 </div>
                             @endif
-                            <span class="help-block">{{ trans('cruds.permission.fields.title_helper') }}</span>
+                            <div class="form-text text-muted">{{ trans('cruds.permission.fields.title_helper') }}</div>
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <button class="btn btn-danger" type="submit">
                                 {{ trans('global.save') }}
                             </button>

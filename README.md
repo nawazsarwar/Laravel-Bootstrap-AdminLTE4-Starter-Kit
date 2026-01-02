@@ -45,10 +45,11 @@ A professional Laravel 12 starter kit featuring AdminLTE admin panel, comprehens
 - **Localized Date/Time**: Configurable date and time formats
 
 ### 🎨 Admin Panel
-- **AdminLTE Integration**: Modern admin panel interface
-- **Bootstrap 5**: Latest Bootstrap framework
+- **AdminLTE 4**: Modern admin panel interface (upgraded from v3)
+- **Bootstrap 5**: Latest Bootstrap framework (upgraded from v4)
 - **Responsive Design**: Mobile-friendly interface
 - **Global Search**: Search functionality across the admin panel
+- **All Assets Locally Hosted**: No CDN dependencies
 
 ### 🧪 Testing
 - **Pest Testing Framework**: Modern PHP testing with Pest
@@ -297,8 +298,10 @@ php artisan dusk
 ### Frontend
 - **Vite**: ^4.0.0 (Asset bundler)
 - **Axios**: ^1.1.2 (HTTP client)
-- **AdminLTE**: Admin panel theme
-- **Bootstrap 5**: CSS framework
+- **AdminLTE 4**: Admin panel theme (locally hosted)
+- **Bootstrap 5**: CSS framework (locally hosted)
+- **Font Awesome 6**: Icon library (locally hosted)
+- **Bootstrap Icons**: Icon library for welcome page (locally hosted)
 
 ### Development
 - **Pest**: ^4.3 (Testing framework)

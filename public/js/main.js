@@ -5,6 +5,17 @@ $(document).ready(function () {
     week: {dow: 1} // Monday is the first day of the week
   })
 
+  // Tempus Dominus DateTime Picker (Bootstrap 5 compatible)
+  // Note: Tempus Dominus has a different API than bootstrap-datetimepicker
+  // For now, keeping basic date/time functionality
+  // Full Tempus Dominus integration can be added later if needed
+  if (typeof tempusDominus !== 'undefined') {
+    // Tempus Dominus initialization would go here
+    // Example: new tempusDominus.TempusDominus(document.getElementById('date'), { ... })
+  }
+
+  // Legacy datetimepicker support (if still needed)
+  if (typeof $.fn.datetimepicker !== 'undefined') {
   $('.date').datetimepicker({
     format: 'DD-MM-YYYY',
     locale: 'en',
@@ -37,12 +48,14 @@ $(document).ready(function () {
       next: 'fas fa-chevron-right'
     }
   })
+  }
 
   $('.select-all').click(function () {
     let $select2 = $(this).parent().siblings('.select2')
     $select2.find('option').prop('selected', 'selected')
     $select2.trigger('change')
   })
+  
   $('.deselect-all').click(function () {
     let $select2 = $(this).parent().siblings('.select2')
     $select2.find('option').prop('selected', '')
@@ -51,18 +64,14 @@ $(document).ready(function () {
 
   $('.select2').select2()
 
-  $('.treeview').each(function () {
-    var shouldExpand = false
-    $(this).find('li').each(function () {
-      if ($(this).hasClass('active')) {
-        shouldExpand = true
-      }
-    })
-    if (shouldExpand) {
-      $(this).addClass('active')
-    }
+  // AdminLTE 4 sidebar toggle
+  $('a[data-lte-toggle="sidebar"]').click(function () {
+    setTimeout(function() {
+      $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+    }, 350);
   })
-
+  
+  // Legacy support for data-widget (if needed during transition)
   $('a[data-widget^="pushmenu"]').click(function () {
     setTimeout(function() {
       $($.fn.dataTable.tables(true)).DataTable().columns.adjust();

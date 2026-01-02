@@ -116,12 +116,47 @@ class User extends Authenticatable
 
     public function getEmailVerifiedAtAttribute($value)
     {
-        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format')) : null;
+        if (!$value) {
+            return null;
+        }
+
+        try {
+            return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        } catch (\Exception $e) {
+            // Fallback to Carbon::parse() if format doesn't match exactly
+            return Carbon::parse($value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        }
     }
 
     public function setEmailVerifiedAtAttribute($value)
     {
-        $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        if (!$value) {
+            $this->attributes['email_verified_at'] = null;
+            return;
+        }
+
+        // If it's already a Carbon instance, format it directly
+        if ($value instanceof Carbon) {
+            $this->attributes['email_verified_at'] = $value->format('Y-m-d H:i:s');
+            return;
+        }
+
+        // If it's a string in the custom format, parse it
+        if (is_string($value)) {
+            try {
+                $this->attributes['email_verified_at'] = Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s');
+            } catch (\Exception $e) {
+                // If parsing fails, try to parse as standard format or use Carbon::parse()
+                try {
+                    $this->attributes['email_verified_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+                } catch (\Exception $e2) {
+                    $this->attributes['email_verified_at'] = null;
+                }
+            }
+            return;
+        }
+
+        $this->attributes['email_verified_at'] = null;
     }
 
     public function setPasswordAttribute($input)
@@ -138,12 +173,47 @@ class User extends Authenticatable
 
     public function getVerifiedAtAttribute($value)
     {
-        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format')) : null;
+        if (!$value) {
+            return null;
+        }
+
+        try {
+            return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        } catch (\Exception $e) {
+            // Fallback to Carbon::parse() if format doesn't match exactly
+            return Carbon::parse($value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        }
     }
 
     public function setVerifiedAtAttribute($value)
     {
-        $this->attributes['verified_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        if (!$value) {
+            $this->attributes['verified_at'] = null;
+            return;
+        }
+
+        // If it's already a Carbon instance, format it directly
+        if ($value instanceof Carbon) {
+            $this->attributes['verified_at'] = $value->format('Y-m-d H:i:s');
+            return;
+        }
+
+        // If it's a string in the custom format, parse it
+        if (is_string($value)) {
+            try {
+                $this->attributes['verified_at'] = Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s');
+            } catch (\Exception $e) {
+                // If parsing fails, try to parse as standard format or use Carbon::parse()
+                try {
+                    $this->attributes['verified_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+                } catch (\Exception $e2) {
+                    $this->attributes['verified_at'] = null;
+                }
+            }
+            return;
+        }
+
+        $this->attributes['verified_at'] = null;
     }
 
     public function roles()
@@ -153,11 +223,46 @@ class User extends Authenticatable
 
     public function getTwoFactorExpiresAtAttribute($value)
     {
-        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format')) : null;
+        if (!$value) {
+            return null;
+        }
+
+        try {
+            return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        } catch (\Exception $e) {
+            // Fallback to Carbon::parse() if format doesn't match exactly
+            return Carbon::parse($value)->format(config('panel.date_format') . ' ' . config('panel.time_format'));
+        }
     }
 
     public function setTwoFactorExpiresAtAttribute($value)
     {
-        $this->attributes['two_factor_expires_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        if (!$value) {
+            $this->attributes['two_factor_expires_at'] = null;
+            return;
+        }
+
+        // If it's already a Carbon instance, format it directly
+        if ($value instanceof Carbon) {
+            $this->attributes['two_factor_expires_at'] = $value->format('Y-m-d H:i:s');
+            return;
+        }
+
+        // If it's a string in the custom format, parse it
+        if (is_string($value)) {
+            try {
+                $this->attributes['two_factor_expires_at'] = Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s');
+            } catch (\Exception $e) {
+                // If parsing fails, try to parse as standard format or use Carbon::parse()
+                try {
+                    $this->attributes['two_factor_expires_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+                } catch (\Exception $e2) {
+                    $this->attributes['two_factor_expires_at'] = null;
+                }
+            }
+            return;
+        }
+
+        $this->attributes['two_factor_expires_at'] = null;
     }
 }

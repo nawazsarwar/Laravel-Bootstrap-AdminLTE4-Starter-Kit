@@ -61,12 +61,12 @@
         </div>
 
         @error('password')
-            <div class="help-block text-center text-danger">
+            <div class="form-text text-center text-danger">
                 {{ $message }}
             </div>
         @enderror
 
-        <div class="help-block text-center">
+        <div class="form-text text-center">
             {{ __('Please confirm your password before continuing.') }}
         </div>
 

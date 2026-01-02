@@ -8,7 +8,7 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-AuditLog">
+            <table class="table table-bordered table-striped table-hover datatable datatable-AuditLog">
                 <thead>
                     <tr>
                         <th width="10">
@@ -69,7 +69,7 @@
                             </td>
                             <td>
                                 @can('audit_log_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.audit-logs.show', $auditLog->id) }}">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.audit-logs.show', $auditLog->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
@@ -101,7 +101,7 @@
     pageLength: 100,
   });
   let table = $('.datatable-AuditLog:not(.ajaxTable)').DataTable({ buttons: dtButtons })
-  $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
+  $('a[data-bs-toggle="tab"]').on('shown.bs.tab click', function(e){
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
